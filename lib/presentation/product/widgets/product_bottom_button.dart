@@ -19,12 +19,12 @@ class ProductBottomButton extends StatelessWidget {
             title: const Text('Xác nhận xóa'),
             content: const Text('Bạn có chắc muốn xóa sản phẩm này không?'),
             actions: [
-              TextButton(onPressed: () => Navigator.pop(context), child: const Text('Hủy')),
+              TextButton(onPressed: () => context.pop(), child: const Text('Hủy')),
               ElevatedButton(
                 onPressed: () {
                   context.read<ProductCubit>().deleteProduct(productId);
                   context.pop(); // close dialog
-                  context.pop(); // back to product list
+                  context.goNamed('productList'); // back to product list
                 },
                 child: const Text('Xóa'),
               ),

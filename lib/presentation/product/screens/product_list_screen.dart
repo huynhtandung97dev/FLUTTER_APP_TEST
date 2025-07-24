@@ -115,6 +115,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
                         return Padding(
                           padding: EdgeInsets.all(8.w),
                           child: ProductCard(
+                            key: Key(product.id),
                             product: product,
                             onPress: () {
                               // context.read<ProductCubit>().detailProduct(product.id);

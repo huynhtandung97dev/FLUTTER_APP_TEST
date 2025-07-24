@@ -1,8 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app_test/data/models/category_model.dart';
-import 'package:flutter_app_test/data/product/model/product_model.dart';
 import 'package:flutter_app_test/presentation/product/cubit/product_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -82,7 +80,8 @@ class _ProductFormScreenState extends State<ProductFormScreen> {
         );
       }
 
-      context.pop();
+      context.read<ProductCubit>().reFilterByCategory();
+      context.goNamed('productList');
     }
   }
 
